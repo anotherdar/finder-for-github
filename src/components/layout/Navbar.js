@@ -3,13 +3,14 @@ import PropTypes from 'prop-types'
 
 const Navbar = ({ icon, title }) => {
     return (
-        <nav className="navbar bg-primary">
-            <h1>
-                <i className={icon} /> {title}
-            </h1>
-        </nav>
+        <div className="push">
+            <nav className="navbar bg-primary">
+                <h1>
+                    <i className={icon} /> {title}
+                </h1>
+            </nav>
+        </div>
     )
-
 }
 Navbar.defaultProps = {
     title: 'Github Finder',
