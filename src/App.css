@@ -227,6 +227,7 @@ h1 {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
+  text-transform: capitalize;
 }
 
 .btn-link {
@@ -349,6 +350,7 @@ textarea {
   padding: 0.4rem;
   font-size: 1.2rem;
   border: 1px solid #ccc;
+  outline: none;
 }
 
 input[type='submit'],

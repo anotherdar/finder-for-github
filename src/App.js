@@ -12,6 +12,8 @@ class App extends Component {
   }
 
   searchUser = async (text) => {
+    this.setState({ loading: true })
+
     const res = await axios.get(
       `https://api.github.com/search/users?q=${text}
      &client_id=${process.env.REACT_APP_GITHUB_ID}
@@ -23,13 +25,20 @@ class App extends Component {
       loading: false
     })
   }
+  clearUsers = ()=> this.setState({ user: [], loading: false})
   render() {
+    const {user, loading} = this.state
     return (
       <div className="App">
         <Navbar />
         <div className="container">
-          <Seacrh searchUser={this.searchUser}/>
-          <User loading={this.state.loading} users={this.state.user}/>
+          <Seacrh 
+            searchUser={this.searchUser} 
+            clearUsers={this.clearUsers} 
+            showClear={ user.length > 0 ? true : false }
+          />
+
+          <User loading={loading} users={user}/>
         </div>
       </div>  
     )
