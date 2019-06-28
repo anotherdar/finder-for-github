@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ReposImten from './ReposItem'
 import PropTypes from 'prop-types'
+import GithubContext from '../../context/github/githubContext'
 
-
-const Repos = ({ repos }) => {
-    return repos.map(repo => <ReposImten repo={repo} key={repo.id}/>)
+const Repos = () => {
+    const context = useContext(GithubContext)
+    return context.repos.map(repo => <ReposImten repo={repo} key={repo.id}/>)
 }
 
 Repos.prototypes = {

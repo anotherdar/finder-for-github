@@ -2,7 +2,7 @@ import {
     SEARCH_USER,
     SET_LOADING,
     CLEAR_USER,
-    GET_GET_SINGLEUSER,
+    GET_SINGLEUSER,
     GET_REPOS
 } from '../types'
 
@@ -14,6 +14,19 @@ export default (state, action) => {
                 user: action.payload,
                 loading: false
             }
+        case GET_SINGLEUSER: 
+            return {
+                ...state,
+                singleUser: action.payload,
+                loading: false
+            }
+        case GET_REPOS: {
+            return {
+                ...state,
+                repos: action.payload,
+                loading: false
+            }
+        }
         case SET_LOADING: 
             return {
                 ...state,
