@@ -13,7 +13,6 @@ const User = ({ match }) => {
         getUserRepos(match.params.login)
         // eslint-disable-next-line
     }, [])
-    console.log(match)
     const {
         name,
         avatar_url,
